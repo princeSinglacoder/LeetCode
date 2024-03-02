@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+void two_sum(vector<int>&arr, int size, int target){
+	unordered_map<int,int>mpp;
+	bool flag=true;
+	for(int i=0;i<size;i++){
+		int num=target-arr[i];
+		if(mpp.find(num)==mpp.end()){
+			mpp[arr[i]]=i;
+		}
+		else{
+			cout<<mpp[num]<<" "<<i;
+			flag=false;
+			break;
+		}
+	}
+	if(flag)cout<<-1;
+}
+int main(){
+	vector<int>arr={2,7,11,15};
+	int size=4;
+	int target=26;
+	two_sum(arr,size,target);
+}
